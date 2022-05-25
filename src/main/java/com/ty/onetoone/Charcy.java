@@ -2,6 +2,7 @@ package com.ty.onetoone;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,7 +15,7 @@ public class Charcy {
 	private int id;
 	private String type;
 	private long charcyno;
-	@OneToOne(mappedBy = "charcy")
+	@OneToOne(mappedBy = "charcy",fetch = FetchType.EAGER)
 	private Vehicle vehicle;
 	
 	public int getId() {
